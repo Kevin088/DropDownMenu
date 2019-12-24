@@ -185,7 +185,18 @@ public class DropDownMenu extends LinearLayout {
             ((TextView) tabMenuView.getChildAt(current_tab_position)).setText(text);
         }
     }
-
+    /**
+     * 改变tab文字
+     *
+     * @param text
+     */
+    public void setTabText(String text,int index) {
+            try{
+                 ((TextView) tabMenuView.getChildAt(index)).setText(text);
+            }catch (Exception e) {
+                
+             }
+    }
     public void setTabClickable(boolean clickable) {
         for (int i = 0; i < tabMenuView.getChildCount(); i = i + 2) {
             tabMenuView.getChildAt(i).setClickable(clickable);
