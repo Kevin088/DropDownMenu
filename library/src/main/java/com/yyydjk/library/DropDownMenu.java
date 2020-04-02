@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -102,6 +103,14 @@ public class DropDownMenu extends LinearLayout {
         addView(containerView, 2);
 
     }
+    public void setMenuBackgroundColor(int menuBackgroundColor){
+        tabMenuView.setBackgroundColor(menuBackgroundColor);
+    }
+    public void setDividerColor(int menuBackgroundColor){
+        for(View view :devideViews){
+            view.setBackgroundColor(menuBackgroundColor);
+        }
+    }
 
     /**
      * 初始化DropDownMenu
@@ -114,7 +123,7 @@ public class DropDownMenu extends LinearLayout {
         if (tabTexts.size() != popupViews.size()) {
             throw new IllegalArgumentException("params not match, tabTexts.size() should be equal popupViews.size()");
         }
-
+        devideViews.clear();
         for (int i = 0; i < tabTexts.size(); i++) {
             addTab(tabTexts, i);
         }
@@ -147,6 +156,7 @@ public class DropDownMenu extends LinearLayout {
 
     }
 
+    public List<View>devideViews=new ArrayList<>();
     private void addTab(@NonNull List<String> tabTexts, int i) {
         final TextView tab = new TextView(getContext());
         tab.setSingleLine();
@@ -172,6 +182,7 @@ public class DropDownMenu extends LinearLayout {
             view.setLayoutParams(new LayoutParams(dpTpPx(0.5f), ViewGroup.LayoutParams.MATCH_PARENT));
             view.setBackgroundColor(dividerColor);
             tabMenuView.addView(view);
+            devideViews.add(view);
         }
     }
 
