@@ -111,6 +111,9 @@ public class DropDownMenu extends LinearLayout {
             view.setBackgroundColor(menuBackgroundColor);
         }
     }
+    public void setUnderLine(int underLineColuor){
+        underLine.setBackgroundColor(underLineColuor);
+    }
 
     /**
      * 初始化DropDownMenu
