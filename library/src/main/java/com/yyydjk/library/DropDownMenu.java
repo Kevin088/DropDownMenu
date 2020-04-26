@@ -107,6 +107,7 @@ public class DropDownMenu extends LinearLayout {
         tabMenuView.setBackgroundColor(menuBackgroundColor);
     }
     public void setDividerColor(int menuBackgroundColor){
+        dividerColor=menuBackgroundColor;
         for(View view :devideViews){
             view.setBackgroundColor(menuBackgroundColor);
         }
