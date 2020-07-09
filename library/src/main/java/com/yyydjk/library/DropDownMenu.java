@@ -244,6 +244,22 @@ public class DropDownMenu extends LinearLayout {
         return current_tab_position != -1;
     }
 
+    TextView selectTextView;
+
+    public void setDdtextSelectedColor(int ddtextSelectedColor){
+        this.textSelectedColor=ddtextSelectedColor;
+        if(selectTextView!=null){
+            selectTextView.setTextColor(textSelectedColor);
+        }
+    }
+
+    public void setMenuSelectedIcon(int menuSelectedIcon){
+        this.menuSelectedIcon=menuSelectedIcon;
+        if(selectTextView!=null){
+            selectTextView.setCompoundDrawablesWithIntrinsicBounds(null, null,
+                    getResources().getDrawable(menuSelectedIcon), null);
+        }
+    }
     /**
      * 切换菜单
      *
@@ -266,6 +282,7 @@ public class DropDownMenu extends LinearLayout {
                         popupMenuViews.getChildAt(i / 2).setVisibility(View.VISIBLE);
                     }
                     current_tab_position = i;
+                    selectTextView= ((TextView) tabMenuView.getChildAt(i));
                     ((TextView) tabMenuView.getChildAt(i)).setTextColor(textSelectedColor);
                     ((TextView) tabMenuView.getChildAt(i)).setCompoundDrawablesWithIntrinsicBounds(null, null,
                             getResources().getDrawable(menuSelectedIcon), null);
