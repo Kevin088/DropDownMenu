@@ -42,7 +42,7 @@ public class DropDownMenu extends LinearLayout {
     //tab未选中颜色
     private int textUnselectedColor = 0xff111111;
     //遮罩颜色
-    private int maskColor = 0x88888888;
+    private int maskColor = 0xB3000000;
     //tab字体大小
     private int menuTextSize = 14;
 
@@ -260,6 +260,8 @@ public class DropDownMenu extends LinearLayout {
                     getResources().getDrawable(menuSelectedIcon), null);
         }
     }
+
+
     /**
      * 切换菜单
      *
