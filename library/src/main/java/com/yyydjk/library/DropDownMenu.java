@@ -52,7 +52,7 @@ public class DropDownMenu extends LinearLayout {
     private int menuUnselectedIcon;
 
     private float menuHeighPercent = 0.5f;
-
+    View underLine;
 
     public DropDownMenu(Context context) {
         super(context, null);
@@ -92,7 +92,7 @@ public class DropDownMenu extends LinearLayout {
         addView(tabMenuView, 0);
 
         //为tabMenuView添加下划线
-        View underLine = new View(getContext());
+        underLine = new View(getContext());
         underLine.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dpTpPx(1.0f)));
         underLine.setBackgroundColor(underlineColor);
         addView(underLine, 1);
@@ -107,9 +107,13 @@ public class DropDownMenu extends LinearLayout {
         tabMenuView.setBackgroundColor(menuBackgroundColor);
     }
     public void setDividerColor(int menuBackgroundColor){
+        dividerColor=menuBackgroundColor;
         for(View view :devideViews){
             view.setBackgroundColor(menuBackgroundColor);
         }
+    }
+    public void setUnderLine(int underLineColuor){
+        underLine.setBackgroundColor(underLineColuor);
     }
 
     /**
